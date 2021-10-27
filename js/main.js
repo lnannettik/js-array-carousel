@@ -62,7 +62,7 @@ for (let i = 0; i < imageCollection.length; i++) {
     //thumbs
     thumbsRef.innerHTML += 
     `<div class="thumb">
-        <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+        <img class="op-6" src="${imageCollection[i]}" alt="${titleCollection[i]}">
     </div>
     `;
 }
@@ -70,7 +70,7 @@ for (let i = 0; i < imageCollection.length; i++) {
 
 document.getElementsByClassName('image-container')[activeImage].classList.add('active');
 
-document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+document.getElementsByClassName('op-6')[activeImage].classList.add('active');
 
 
 // FRECCIA GIU'
@@ -89,8 +89,8 @@ next.addEventListener('click', function () {
     document.getElementsByClassName('image-container')[activeImage].classList.add('active');
 
     // active 'remove & add' on THUMB
-    document.querySelector('.thumb.active').classList.remove('active');
-    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+    document.querySelector('.op-6.active').classList.remove('active');
+    document.getElementsByClassName('op-6')[activeImage].classList.add('active');
 
 });
 
@@ -111,8 +111,8 @@ prev.addEventListener('click', function () {
     document.getElementsByClassName('image-container')[activeImage].classList.add('active');
 
     // active 'remove & add' on THUMB
-    document.querySelector('.thumb.active').classList.remove('active');
-    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+    document.querySelector('.op-6.active').classList.remove('active');
+    document.getElementsByClassName('op-6')[activeImage].classList.add('active');
     
 });
 

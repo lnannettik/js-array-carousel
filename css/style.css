@@ -66,15 +66,17 @@ body {
 .thumbs .thumb {
     height: calc(100% / 5);
 }
-
-.thumbs .thumb.active {
+    
+.thumbs .thumb img.active {
     border: 4px solid #6cc7e0;
+    opacity: 1;
 }
 
 .thumbs .thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.6;
 }
 
 .thumbs .prev,
@@ -88,6 +90,7 @@ body {
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
+    z-index: 2;
 }
 
 .thumbs .prev {

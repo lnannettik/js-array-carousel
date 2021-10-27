@@ -40,3 +40,84 @@ const textCollection = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
+
+const imagesRef = document.querySelector('.images');
+const thumbsRef = document.querySelector('.thumbs');
+//indice immagine carousel attiva
+let activeImage = 1;
+
+for (let i = 0; i < imageCollection.length; i++) {
+    imagesRef.innerHTML += 
+    `<div class="image-container">
+        <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+        <div class="text">
+            <h3>${titleCollection[i]}</h3>
+            <p>
+                ${textCollection[i]}
+            </p>
+        </div>
+    </div>
+    `;
+
+    //thumbs
+    thumbsRef.innerHTML += 
+    `<div class="thumb">
+        <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+    </div>
+    `;
+}
+
+
+document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+
+document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+
+
+// FRECCIA GIU'
+const next = document.querySelector('.next');
+
+next.addEventListener('click', function () {
+
+    if (activeImage === imageCollection.length - 1) {
+        activeImage = 0;
+    } else {
+        activeImage++;
+    }
+
+    // active 'remove & add' on IMAGE
+    document.querySelector('.image-container.active').classList.remove('active');
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+
+    // active 'remove & add' on THUMB
+    document.querySelector('.thumb.active').classList.remove('active');
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+
+});
+
+
+// FRECCIA SU'
+const prev = document.querySelector('.prev');
+
+prev.addEventListener('click', function () {
+
+    if (activeImage = 0) {
+        (activeImage === imageCollection.length - 1)
+    } else {
+        activeImage--;
+    }
+
+    // active 'remove & add' on IMAGE
+    document.querySelector('.image-container.active').classList.remove('active');
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+
+    // active 'remove & add' on THUMB
+    document.querySelector('.thumb.active').classList.remove('active');
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+    
+});
+
+
+
+
+
+    

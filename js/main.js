@@ -100,10 +100,10 @@ const prev = document.querySelector('.prev');
 
 prev.addEventListener('click', function () {
 
-    if (activeImage = 0) {
+    activeImage--;
+
+    if (activeImage == 0) {
         (activeImage === imageCollection.length - 1)
-    } else {
-        activeImage--;
     }
 
     // active 'remove & add' on IMAGE
